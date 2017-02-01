@@ -1,0 +1,46 @@
+$KeySize: 80px
+$KeySpace: 16px
+$KeyNum: 7
+$BorderDark: #383838
+$BorderLight: #b5b5b5
+@mixin size($width,$height:$width)
+  width: $width
+  height: $height
+
+*
+  box-sizing: border-box
+
+.container
+  @include size(100%, 600px)
+  background: url("http://wallpapercave.com/wp/GoHS7RC.jpg")
+  min-width: 800px
+  .keyContainer
+    height: 100px
+    width: ($KeySize + $KeySpace*2)*$KeyNum
+    margin: 0 auto
+    position: relative
+    top: 5rem
+.key
+  @include size($KeySize,auto)
+  background: rgba(0,0,0,0.8)
+  border: 3px solid transparent
+  border-color: $BorderDark
+  float: left
+  margin: $KeySpace
+  padding: 0.8rem 0.1rem
+  text-align: center
+
+  span
+    color: rgb(188, 244, 29)
+    display: block
+    text-transform: uppercase
+  kbd
+    color: #FFF
+    display: block
+    font-size: 1.4rem
+    margin-top: 0.4rem
+.play
+  color: $BorderLight
+  border-color: $BorderLight
+  kbd, span
+    transform: scale(0.9)
